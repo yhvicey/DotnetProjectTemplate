@@ -1,0 +1,27 @@
+<Project>
+    <!-- Custom directories -->
+    <PropertyGroup>
+        <RootFolder>$(MSBuildThisFileDirectory)</RootFolder>
+        <BuildFolder>$(RootFolder)build\</BuildFolder>
+        <PublishFolder>$(RootFolder)publish\</PublishFolder>
+        <SourceFolder>$(RootFolder)src\</SourceFolder>
+        <TestFolder>$(RootFolder)test\</TestFolder>
+    </PropertyGroup>
+    <!-- Override default directories -->
+    <PropertyGroup>
+        <BaseIntermediateOutputPath>$(BuildFolder)$(MSBuildProjectName)\$(BaseIntermediateOutputPath)</BaseIntermediateOutputPath>
+        <BaseOutputPath>$(BuildFolder)$(MSBuildProjectName)\$(BaseOutputPath)</BaseOutputPath>
+        <PublishDir>$(PublishFolder)$(MSBuildProjectName)\$(PublishDir)</PublishDir>
+    </PropertyGroup>
+    <!-- Default project properties -->
+    <PropertyGroup>
+    </PropertyGroup>
+    <!-- Nuget package properties -->
+    <PropertyGroup>
+        <Authors>Vicey Wang</Authors>
+        <Version>0.0.1</Version>
+        <RepositoryType>git</RepositoryType>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <IncludeSymbols>true</IncludeSymbols>
+    </PropertyGroup>
+</Project>

@@ -1,0 +1,5 @@
+<Project>
+    <Target Name="ClearPublishFolder" BeforeTargets="PrepareForPublish">
+        <RemoveDir Directories="$(PublishDir)" />
+    </Target>
+</Project>
