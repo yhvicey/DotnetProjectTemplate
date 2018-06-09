@@ -5,7 +5,6 @@
         <BuildFolder>$(RootFolder)build\</BuildFolder>
         <PublishFolder>$(RootFolder)publish\</PublishFolder>
         <SourceFolder>$(RootFolder)src\</SourceFolder>
-        <TestFolder>$(RootFolder)test\</TestFolder>
     </PropertyGroup>
     <!-- Override default directories -->
     <PropertyGroup>
