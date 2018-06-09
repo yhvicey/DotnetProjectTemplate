@@ -12,7 +12,7 @@ This is a project template for personal projects.
 |-- build                           // Build result folder.
 |   |-- Template.ClassLibrary       // Project Template.ClassLibrary's build result.
 |   `-- Template.ClassLibrary.Test  // Project Template.ClassLibrary.Test's build result.
-|-- build.proj                      // Build entry project.
+|-- build.proj                      // Build entry project. Do not edit it.
 |-- publish                         // Publish result folder. Test projects will not be published.
 |   `-- Template.ClassLibrary       // Project Template.ClassLibrary's publish result.
 `-- src                             // Projects source folder.

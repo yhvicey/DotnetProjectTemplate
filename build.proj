@@ -1,11 +1,10 @@
 <Project>
     <Import Project="Directory.Build.props" />
-    <ItemGroup>
-        <ProjectFiles Include="$(SourceFolder)**\*.*proj" />
-        <TestProjectFiles Include="$(SourceFolder)**\*.Test.*proj" />
-    </ItemGroup>
     <Target Name="Build">
         <MSBuild Projects="@(ProjectFiles);@(TestProjectFiles)" Targets="Build" />
+    </Target>
+    <Target Name="Clean">
+        <MSBuild Projects="@(ProjectFiles);@(TestProjectFiles)" Targets="Clean" />
     </Target>
     <Target Name="Publish">
         <MSBuild Projects="@(ProjectFiles)" Targets="Publish" />
