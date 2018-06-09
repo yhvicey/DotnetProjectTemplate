@@ -15,10 +15,10 @@ This is a project template for personal projects.
 |-- build.proj                      // Build entry project.
 |-- publish                         // Publish result folder. Test projects will not be published.
 |   `-- Template.ClassLibrary       // Project Template.ClassLibrary's publish result.
-|-- src                             // Projects source folder.
-|   `-- Template.ClassLibrary       // Project Template.ClassLibrary's source folder.
-`-- test                            // Test projects source folder.
-    `-- Template.ClassLibrary.Test  // Project Template.ClassLibrary.Test's source folder.
+`-- src                             // Projects source folder.
+    |-- Template.ClassLibrary       // Project Template.ClassLibrary's source folder.
+    |-- Template.ClassLibrary.Test  // Project Template.ClassLibrary.Test's source folder.
+    `-- Template.sln                // Projects' Visual Studio solution file.
 ```
 
 ## Common commands
