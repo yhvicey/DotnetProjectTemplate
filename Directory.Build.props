@@ -23,7 +23,7 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <IncludeSymbols>true</IncludeSymbols>
     </PropertyGroup>
-    <!-- Custom files -->
+    <!-- Project files -->
     <ItemGroup>
         <ProjectFiles Include="$(SourceFolder)**\*.*proj" Exclude="$(SourceFolder)**\*.Test.*proj" />
         <TestProjectFiles Include="$(SourceFolder)**\*.Test.*proj" />
