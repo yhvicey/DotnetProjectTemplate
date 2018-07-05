@@ -1,16 +1,18 @@
 <Project>
     <!-- Custom directories -->
     <PropertyGroup>
-        <RootFolder>$(MSBuildThisFileDirectory)</RootFolder>
-        <BuildFolder>$(RootFolder)build\</BuildFolder>
-        <PublishFolder>$(RootFolder)publish\</PublishFolder>
+        <RootFolder>$(MSBuildThisFileDirectory.Replace("src/", "").Replace("src\", ""))</RootFolder>
         <SourceFolder>$(RootFolder)src\</SourceFolder>
+        <BuildFolder>$(RootFolder)build\</BuildFolder>
+        <LibFolder>$(RootFolder)lib\</LibFolder>
+        <PublishFolder>$(RootFolder)publish\</PublishFolder>
+        <ProjectFileRelativePath>$(MSBuildProjectFullPath.Replace($(SourceFolder), ""))</ProjectFileRelativePath>
     </PropertyGroup>
     <!-- Override default directories -->
     <PropertyGroup>
-        <BaseIntermediateOutputPath>$(BuildFolder)$(MSBuildProjectName)\$(BaseIntermediateOutputPath)</BaseIntermediateOutputPath>
-        <BaseOutputPath>$(BuildFolder)$(MSBuildProjectName)\$(BaseOutputPath)</BaseOutputPath>
-        <PublishDir>$(PublishFolder)$(MSBuildProjectName)\$(PublishDir)</PublishDir>
+        <BaseIntermediateOutputPath>$(BuildFolder)$(ProjectFileRelativePath)\$(BaseIntermediateOutputPath)</BaseIntermediateOutputPath>
+        <BaseOutputPath>$(BuildFolder)$(ProjectFileRelativePath)\$(BaseOutputPath)</BaseOutputPath>
+        <PublishDir>$(PublishFolder)$(ProjectFileRelativePath)\$(PublishDir)</PublishDir>
     </PropertyGroup>
     <!-- Default project properties -->
     <PropertyGroup>
@@ -23,9 +25,4 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <IncludeSymbols>true</IncludeSymbols>
     </PropertyGroup>
-    <!-- Project files -->
-    <ItemGroup>
-        <ProjectFiles Include="$(SourceFolder)**\*.*proj" Exclude="$(SourceFolder)**\*.Test.*proj" />
-        <TestProjectFiles Include="$(SourceFolder)**\*.Test.*proj" />
-    </ItemGroup>
 </Project>

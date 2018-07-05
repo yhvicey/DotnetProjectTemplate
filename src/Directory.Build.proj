@@ -1,0 +1,25 @@
+<Project>
+    <Import Project="Directory.Build.props" />
+    <!-- Project files -->
+    <ItemGroup>
+        <ProjectFiles Include="$(SourceFolder)**\*.*proj" Exclude="$(SourceFolder)**\*.Test.*proj;$(SourceFolder)Directory.Build.proj" />
+        <PublishProjectFiles Condition="@(PublishProjectFiles->Count()) == 0" Include="@(ProjectFiles)" />
+        <TestProjectFiles Include="$(SourceFolder)**\*.Test.*proj" />
+    </ItemGroup>
+    <Target Name="Build">
+        <MSBuild Projects="@(ProjectFiles);@(PublishProjectFiles);@(TestProjectFiles)" Targets="Build" />
+    </Target>
+    <Target Name="Clean">
+        <MSBuild Projects="@(ProjectFiles);@(PublishProjectFiles);@(TestProjectFiles)" Targets="Clean" />
+    </Target>
+    <Target Name="Publish">
+        <MSBuild Projects="@(PublishProjectFiles)" Targets="Publish" />
+    </Target>
+    <Target Name="Restore">
+        <MSBuild Projects="@(ProjectFiles);@(PublishProjectFiles);@(TestProjectFiles)" Targets="Restore" />
+    </Target>
+    <Target Name="VSTest">
+        <MSBuild Projects="@(TestProjectFiles)" Targets="VSTest" />
+    </Target>
+    <Import Project="Directory.Build.targets" />
+</Project>
